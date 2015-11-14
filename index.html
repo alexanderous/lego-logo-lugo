@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Resume</title>
-
+  <title>Alexander Cheung's Resume</title>
+  <!-- I realized that the order in which you place the CSS files are important! Bootstrap goes first, so you can override them with custom CSS files. -->
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Philosopher:400,700,400italic' rel='stylesheet' type='text/css'>
 
   <script src="js/jQuery.js"></script>
-
   <script src="js/helper.js"></script>
 
-  <!--
-  Uncomment the <script> tag below when you're ready to add an interactive
-  Google Map to your resume!
-  -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
   <div id="main">
+  <!-- I couldn't figure out how to get the responsive design of the Bootstrap navbar to work. Currently, the elements just stack. It should collapse into a hamburger drop-down menu, that activates when clicked. So far, no luck. Looks great on desktop though. -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="http://www.alexanderous.co/blog">Blog</a></li>
+              <li><a href="http://www.alexanderous.co">Portfolio</a></li>
+              <li><a href="#workExperience">Work</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#education">Education</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
@@ -38,7 +50,7 @@
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
+      <h3 class="orange center-text">Let's Connect</h3>
         <ul id="footerContacts" class="flex-box">
       </ul>
     </div>

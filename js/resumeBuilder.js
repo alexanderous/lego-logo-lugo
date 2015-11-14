@@ -1,4 +1,4 @@
-
+// JSON data sets for all the modular parts of the resume.
 var bio = {
 	"name": "Alexander Cheung",
 	"role": "Product Designer and Developer",
@@ -86,22 +86,14 @@ var projects = {
 }
 
 
-
-
-if (bio.skills.length > 0) {
-	$("#header").append([HTMLskillsStart]);
-	for (skill in bio.skills) {
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append([formattedSkill]);
-	}
-};
-
+// Functions to organize and insert the data into the resume.
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").prepend(formattedName);
-	$("#header").prepend(formattedRole);
+
+	$("#header").append(formattedName);
+	$("#header").append(formattedRole);
 
 	for (contact in bio.contacts) {
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
@@ -124,21 +116,25 @@ bio.display = function() {
 		$("#footerContacts").append(formattedGithub);
 		$("#footerContacts").append(formattedBlog);
 		$("#footerContacts").append(formattedLocation); */
-
 	}
-
-
 
 	var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
 	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-
 
 	$("#header").prepend(formattedPic);
 	$("#header").prepend(formattedWelcomeMessage);
 }
 
 bio.display();
+
+if (bio.skills.length > 0) {
+	$("#header").append([HTMLskillsStart]);
+	for (skill in bio.skills) {
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#skills").append([formattedSkill]);
+	}
+};
 
 education.display = function() {
 	for (school in education.schools) {
@@ -157,7 +153,6 @@ education.display = function() {
 		$(".education-entry").append(HTMLonlineClasses);
 
 	for (onlineClass in education.onlineClasses) {
-
 		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
 		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].date);
 		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
@@ -167,14 +162,9 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchool);
 		$(".education-entry:last").append(formattedURL);
 	}
-
-
 }
 
-
 education.display();
-
-
 
 work.display = function() {
 	for (job in work.jobs) {
@@ -194,7 +184,6 @@ work.display = function() {
 }
 
 work.display();
-
 
 projects.display = function() {
 	for (project in projects.projects) {
@@ -217,8 +206,7 @@ projects.display = function() {
 
 projects.display();
 
-
-
+// Google Maps addition
 
 $("#mapDiv").append(googleMap);
 

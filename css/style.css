@@ -9,9 +9,9 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Philosopher', sans-serif;
+  letter-spacing: 0.05em;
 }
 
 .clear-fix {
@@ -24,9 +24,14 @@ h6 {
   padding: 0 5%;
 }
 
+/* I tried combining font properties such as font-size and line-height below
+(as recommended in the CSS style guide), and the font size was smaller than 40px.
+So I've kept the font properties separate in this CSS file.
+*/
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #14385a;
   line-height: 48px;
   display: inline;
 }
@@ -36,7 +41,7 @@ h2 {
   font-size: 24px;
   color: #999;
   line-height: 29px;
-  padding: 10px;
+  padding: 30px 0 5px 5%;
 }
 
 h3 {
@@ -53,7 +58,6 @@ h4 {
   line-height: 17px;
 }
 
-h2,
 h3,
 h4,
 h5 {
@@ -91,13 +95,15 @@ p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
+  padding-bottom: 30px;
 }
 
 a {
-  color: #1199c3;
+  color: #3159a7;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  padding-bottom: 3px;
 }
 
 .welcome-message {
@@ -107,21 +113,28 @@ a {
   line-height: 28px;
 }
 
+.change-line {
+  display: block;
+  font-size: 25px;
+}
+
 #skills-h3 {
-  color: #f5ae23;
+  color: #eed958;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #5bbb7e;
+  margin-top: 40px;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #eed958;
+
 }
 
 .white-text {
-  font-weight: bold;
+  font-weight: 400;
   color: #fff;
 }
 
@@ -137,7 +150,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #5bbb7e;
 }
 
 .flex-box {
@@ -161,7 +174,7 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
-  display: none;
+  margin-right: 20px;
 }
 
 img {
